@@ -507,7 +507,6 @@ WHERE ord = 1
 14.
 ```sql
 SELECT DISTINCT name FROM casting
-  JOIN movie ON movie.id = movieid
   JOIN actor ON actor.id = actorid
   WHERE actorid IN (
 	SELECT actorid FROM casting
@@ -522,7 +521,7 @@ SELECT title, COUNT(actorid) FROM casting
   JOIN movie ON movieid = movie.id
   WHERE yr = 1978
   GROUP BY movieid, title
-  ORDER BY COUNT(actorid) DESC
+  ORDER BY COUNT(actorid) DESC, title
 ```
 16.
 ```sql
